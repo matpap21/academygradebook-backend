@@ -1,11 +1,9 @@
 package com.sda.j92.academy.service;
 
-import com.sda.j92.academy.model.AcademicGroup;
-import com.sda.j92.academy.model.ApplicationUser;
-import com.sda.j92.academy.model.FieldOfStudyEnum;
-import com.sda.j92.academy.model.Student;
+import com.sda.j92.academy.model.*;
 import com.sda.j92.academy.modelDto.AcademicGroupDto;
 import com.sda.j92.academy.modelDto.CreateStudentDto;
+import com.sda.j92.academy.modelDto.GradeDto;
 import com.sda.j92.academy.modelDto.StudentDto;
 import com.sda.j92.academy.repository.AcademicGroupRepository;
 import com.sda.j92.academy.repository.ApplicationUserRepository;
@@ -29,6 +27,7 @@ public class StudentService {
     private final AcademicGroupRepository academicGroupRepository;
     private final GradeRepository gradeRepository;
     private final ApplicationUserRepository applicationUserRepository;
+
 
     public List<StudentDto> findAll() {
         List<Student> students = studentRepository.findAll ( );
@@ -170,4 +169,27 @@ public class StudentService {
         }
         throw new EntityNotFoundException ( );
     }
-}
+
+    public List<StudentDto> findStudentsToBeRemoved(Long id){
+        List<Student> studentDtoOptional = studentRepository.findAll ();
+        return  studentDtoOptional.stream().filter (student -> student.getGrades ().stream ().map (Grade::getGrades).anyMatch (grade->grade<3)).map (student -> StudentDto.builder ( )
+                .id (student.getId ( ))
+                .pesel (student.getPesel ( ))
+                .name (student.getName ( ))
+                .surname (student.getSurname ( ))
+                .phoneNumber (student.getPhoneNumber ( ))
+                .email (student.getEmail ( ))
+                .academicGroups (student.getAcademicGroups ( ).stream ( )
+                        .map (academicGroup -> AcademicGroupDto.builder ( )
+                                .academicGroup (academicGroup.getAcademicGroup ( ))
+                                .groupLength (academicGroup.getGroupLength ( ))
+                                .fieldOfStudy (academicGroup.getFieldOfStudy ( ) == null ?
+                                        FieldOfStudyEnum.UNKNOWN : academicGroup.getFieldOfStudy ( ).getFieldOfStudyEnum ( ))
+                                .startDate (academicGroup.getStartDate ( ))
+                                .build ( ))
+                        .collect (Collectors.toSet ( )))
+                .build ( ))
+                .collect (Collectors.toList ( ));
+
+        }
+    }

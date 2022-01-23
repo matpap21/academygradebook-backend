@@ -1,0 +1,19 @@
+.CardComponentContainer{
+    display: flex;
+    flex-direction: column;
+    border-radius: 2px;
+    background-color: var(--card-bg);
+    margin: 10px;
+}
+
+.CardTitle{
+    border-bottom: 2px solid var(--card-border);
+    text-align: left;
+    padding: 2px 0 1px 5px;
+    font-size: 18px;
+}
+
+.CardContent{
+    display: flex;
+    margin: 10px 4px;
+}
