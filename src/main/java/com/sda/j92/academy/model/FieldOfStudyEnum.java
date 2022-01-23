@@ -1,0 +1,26 @@
+package com.sda.j92.academy.model;
+
+public enum FieldOfStudyEnum {
+    UNKNOWN,
+    ArchitectureandUrbanPlanning,
+    CivilEngineering,
+    EnvironmentalEngineering,
+    BiomedicalEngineering,
+    MaterialsEngineering,
+    MechanicalEngineering,
+    ManagementandProductionEngineering,
+    Mechatronics,
+    TechnicalApplicationsoftheInternet,
+    ElectronicsandTelecommunications,
+    AutomaticControlandRobotics,
+    ElectricalEngineering,
+    InformationEngineering,
+    PowerEngineering,
+    Mathematics,
+    AutomaticControlandManagement,
+    Bioinformatics,
+    SafetyEngineering,
+    Logistics,
+    Transport,
+    ChemicalTechnology,
+    }
