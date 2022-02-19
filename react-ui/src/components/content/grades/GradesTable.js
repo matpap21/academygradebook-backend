@@ -7,7 +7,7 @@ import instance from "../../../axios/axios";
 const GradesTable = (props) => {
 
     const handleRemoveRecord = (row) => {
-        instance.delete("/api/grades/" + row.id)
+        instance.delete("/grades/" + row.id)
             .then((data) => {
                 console.log("Otrzymaliśmy sukces odpowiedź!");
                 props.refreshData();

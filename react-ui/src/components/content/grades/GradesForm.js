@@ -37,7 +37,7 @@ const GradesForm = () => {
         console.log("Wysyłamy:" + JSON.stringify(editedGrades))
 
         editedGrades.studentId = studentId;
-        instance.post('/api/grades', editedGrades)
+        instance.post('/grades', editedGrades)
             .then((data) => {
                 console.log("Odpowiedz sukces: " + JSON.stringify(data));
             })
@@ -46,7 +46,7 @@ const GradesForm = () => {
             })
     }
     const pullRecordsFromDatabaseServer = () => {
-        instance.get("/api/academicsubjects")
+        instance.get("/academicsubjects")
             .then((data) => {
                 // data ma pole data
                 console.log("Otrzymaliśmy sukces odpowiedź!")

@@ -7,7 +7,7 @@ import instance from "../../../axios/axios";
 const AcademicSubjectsTable = (props) => {
 
     const handleRemoveRecord = (row) => {
-        instance.delete("/api/academicsubjects/" + row.id)
+        instance.delete("/academicsubjects/" + row.id)
             .then((data) => {
                 console.log("Otrzymaliśmy sukces odpowiedź!");
                 props.refreshData();

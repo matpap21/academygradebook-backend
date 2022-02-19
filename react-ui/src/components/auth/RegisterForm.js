@@ -30,7 +30,7 @@ const RegisterForm = () => {
         // wysłanie obiektu na serwer
         console.log("Wysyłamy:" + JSON.stringify(registeredUser))
 
-        instance.post('/api/user/register', registeredUser)
+        instance.post('/user/register', registeredUser)
             .then((data)=>{
                 console.log("Odpowiedź sukces: "+ JSON.stringify(data));
 

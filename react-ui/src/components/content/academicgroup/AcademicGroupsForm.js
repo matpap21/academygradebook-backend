@@ -48,7 +48,7 @@ const AcademicGroupsForm = () => {
     }
 
     const pullFieldsOfStudyRecordsFromDatabaseServer = () => {
-        instance.get("/api/fieldsofstudy")
+        instance.get("/fieldsofstudy")
             .then((data) => {
                 // data ma pole data
                 setFieldsOfStudyRecordsOnServer(data.data);
@@ -66,7 +66,7 @@ const AcademicGroupsForm = () => {
         // wysyłanie obiektu na serwer
         console.log("Wysyłamy:" + JSON.stringify(editedAcademicGroup))
 
-        instance.post('/api/fieldsofstudy/addgroup/'+ editedAcademicGroup.fieldOfStudyId, editedAcademicGroup)
+        instance.post('/fieldsofstudy/addgroup/'+ editedAcademicGroup.fieldOfStudyId, editedAcademicGroup)
             .then((data) => {
                 console.log("Odpowiedz sukces: " + JSON.stringify(data));
             })

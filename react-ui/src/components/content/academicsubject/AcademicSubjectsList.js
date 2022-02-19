@@ -12,7 +12,7 @@ const AcademicSubjectsList = () => {
     const [rows, setRows] = useState([]);
 
     const pullRecordsFromDatabaseServer = () => {
-        instance.get("/api/academicsubjects")
+        instance.get("/academicsubjects")
             .then((data) => {
                 // data ma pole data
                 console.log("Otrzymaliśmy sukces odpowiedź!")
@@ -26,7 +26,7 @@ const AcademicSubjectsList = () => {
     }
 
     const handleRemoveRecord = (row) => {
-        instance.delete("/api/academicsubjects/" + row.id)
+        instance.delete("/academicsubjects/" + row.id)
             .then((data) => {
                 console.log("Otrzymaliśmy sukces odpowiedź!");
                 pullRecordsFromDatabaseServer();

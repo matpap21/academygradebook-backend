@@ -32,7 +32,7 @@ const StudentForm = () => {
     }
 
     const pullAcademicGroupRecordsFromDatabaseServer = () => {
-        instance.get("/api/academicgroups")
+        instance.get("/academicgroups")
             .then((data) => {
                 // data ma pole data
                 setAcademicGroupsRecordsOnServer(data.data);
@@ -51,7 +51,7 @@ const StudentForm = () => {
         // wysyłanie obiektu na serwer
         console.log("Wysyłamy:" + JSON.stringify(editedStudents))
 
-        instance.post('/api/academicgroups/addstudent/' + editedStudents.academicGroupsId, editedStudents)
+        instance.post('/academicgroups/addstudent/' + editedStudents.academicGroupsId, editedStudents)
             .then((data) => {
                 console.log("Odpowiedz sukces: " + JSON.stringify(data));
             })

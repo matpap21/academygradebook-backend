@@ -24,7 +24,7 @@ const AcademicGroupAddStudent = () => {
     };
 
     const pullAcademicGroups = () => {
-        instance.get(`/api/academicgroups`)
+        instance.get(`/academicgroups`)
             .then((data) => {
                 // data ma pole data
                 console.log("Otrzymaliśmy sukces odpowiedź!")
@@ -39,7 +39,7 @@ const AcademicGroupAddStudent = () => {
 
     const addStudentToAcademicGroup = (idStudent) => {
         console.log("Removing: " + idStudent)
-        instance.post(`/api/academicgroups/student/${studentId}/${idStudent}`)
+        instance.post(`/academicgroups/student/${studentId}/${idStudent}`)
             .then((data) => {
                 // data ma pole data
                 console.log("Otrzymaliśmy sukces odpowiedź!")
@@ -69,7 +69,7 @@ const AcademicGroupAddStudent = () => {
         // wysyłanie obiektu na serwer
         console.log("Wysyłamy:" + JSON.stringify(editedAcademicGroup))
 
-        instance.post('/api/academicgroups/addstudent/'+ editedAcademicGroup.academicGroupsId + `/` + studentId)
+        instance.post('/academicgroups/addstudent/'+ editedAcademicGroup.academicGroupsId + `/` + studentId)
             .then((data) => {
                 console.log("Odpowiedz sukces: " + JSON.stringify(data));
             })

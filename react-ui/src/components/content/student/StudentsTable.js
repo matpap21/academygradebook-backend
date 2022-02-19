@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 const StudentsTable = (props) => {
 
     const handleRemoveRecord = (row) => {
-        instance.delete("/api/students" + row.id)
+        instance.delete("/students" + row.id)
             .then((data) => {
                 console.log("Otrzymaliśmy sukces odpowiedź!");
                 props.refreshData();

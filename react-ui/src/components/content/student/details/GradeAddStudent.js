@@ -20,7 +20,7 @@ const GradesAddStudent = () => {
     };
 
     const pullGrades = () => {
-        instance.get(`/api/grades/${studentId}`)
+        instance.get(`/grades/${studentId}`)
             .then((data) => {
                 // data ma pole data
                 console.log("Otrzymaliśmy sukces odpowiedź!")
@@ -35,7 +35,7 @@ const GradesAddStudent = () => {
 
     const addStudentToGrades = (idStudent) => {
         console.log("Removing: " + idStudent)
-        instance.post(`/api/grades/student/${studentId}/${idStudent}`)
+        instance.post(`/grades/student/${studentId}/${idStudent}`)
             .then((data) => {
                 // data ma pole data
                 console.log("Otrzymaliśmy sukces odpowiedź!")
@@ -49,7 +49,7 @@ const GradesAddStudent = () => {
 
     const removeStudentFromAcademicGroup = (idStudent) => {
         console.log("Adding: " + idStudent)
-        instance.delete(`/api/grades/student/${studentId}/${studentId}`)
+        instance.delete(`/grades/student/${studentId}/${studentId}`)
             .then((data) => {
                 // data ma pole data
                 console.log("Otrzymaliśmy sukces odpowiedź!")
@@ -79,7 +79,7 @@ const GradesAddStudent = () => {
         // wysyłanie obiektu na serwer
         console.log("Wysyłamy:" + JSON.stringify(editedGrades))
 
-        instance.post('/api/grades/addstudent/'+ editedGrades.grades + `/` + studentId)
+        instance.post('/grades/addstudent/'+ editedGrades.grades + `/` + studentId)
             .then((data) => {
                 console.log("Odpowiedz sukces: " + JSON.stringify(data));
             })

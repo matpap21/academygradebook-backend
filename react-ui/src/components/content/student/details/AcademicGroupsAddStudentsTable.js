@@ -11,7 +11,7 @@ const AcademicGroupsAddStudentsTable = (props) => {
 
 
     const handleRemoveRecord = (row) => {
-        instance.delete("/api/academicgroups" + row.id)
+        instance.delete("/academicgroups" + row.id)
             .then((data) => {
                 console.log("Otrzymaliśmy sukces odpowiedź!");
                 props.refreshData();
@@ -22,7 +22,7 @@ const AcademicGroupsAddStudentsTable = (props) => {
     }
 
     const pullAcademicGroups = () => {
-        instance.get(`/api/academicgroups/bystudent/${props.studentId}`)
+        instance.get(`/academicgroups/bystudent/${props.studentId}`)
             .then((data) => {
                 // data ma pole data
                 console.log("Otrzymaliśmy sukces odpowiedź!")

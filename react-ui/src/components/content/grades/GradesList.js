@@ -11,7 +11,7 @@ const GradesList = () => {
     const [rows, setRows] = useState([]);
 
     const pullRecordsFromDatabaseServer = () => {
-        instance.get("/api/grades")
+        instance.get("/grades")
             .then((data) => {
                 // data ma pole data
                 console.log("Otrzymaliśmy sukces odpowiedź!")
