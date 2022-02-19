@@ -28,7 +28,7 @@ const handleClearForm = () => {
     setEditedAcademicSubject({...EMPTY_NEW_ACADEMIC_SUBJECT})
 }
 const pullAcademicLecturersRecordsFromDatabaseServer = () => {
-    instance.get("/api/universitylecturers")
+    instance.get("/universitylecturers")
         .then((data) => {
             // data ma pole data
             setAcademicLecturersRecordsOnServer(data.data);
@@ -45,7 +45,7 @@ const handleSubmit = () => {
     // wysyłanie obiektu na serwer
     console.log("Wysyłamy:" + JSON.stringify(editedAcademicSubject))
 
-    instance.post('/api/academicsubjects' ,editedAcademicSubject)
+    instance.post('/academicsubjects' ,editedAcademicSubject)
         .then((data) => {
             console.log("Odpowiedz sukces: " + JSON.stringify(data));
         })

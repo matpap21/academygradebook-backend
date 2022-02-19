@@ -14,7 +14,7 @@ export const auth = (username, password) => {
             username: username,
             password: password
         };
-        instance.post("/api/login", authData)
+        instance.post("/login", authData)
             .then(response => {
                 console.log('Successful login')
                 console.log(response)
@@ -23,7 +23,7 @@ export const auth = (username, password) => {
                 localStorage.setItem('username', username);
 
 
-                instance.get("/api/user")
+                instance.get("/user")
                     .then(response => {
                        console.log('Retrieving rest of user data successful...')
                         localStorage.setItem('id', response.data.id);

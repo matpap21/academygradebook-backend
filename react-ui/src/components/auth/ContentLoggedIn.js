@@ -9,7 +9,6 @@ import AcademicGroupsForm from "../content/academicgroup/AcademicGroupsForm";
 import AcademicGroupsList from "../content/academicgroup/AcademicGroupsList";
 import FieldOfStudyForm from "../content/fieldofstudy/FieldOfStudyForm";
 import FieldOfStudyList from "../content/fieldofstudy/FieldOfStudyList";
-import UniversityLecturerForm from "../content/universitylecturer/UniversityLecturerForm";
 import UniversityLecturersList from "../content/universitylecturer/UniversityLecturersList";
 import AcademicSubjectsForm from "../content/academicsubject/AcademicSubjectsForm";
 import AcademicSubjectsList from "../content/academicsubject/AcademicSubjectsList";
@@ -44,9 +43,6 @@ const ContentLoggedIn = (props) => {
                         <AcademicGroupsForm/>
                     </Route>
 
-                    <Route path={'/lecturer/add'}>
-                        <UniversityLecturerForm/>
-                    </Route>
                     <Route path={'/lecturers'}>
                         <UniversityLecturersList/>
                     </Route>

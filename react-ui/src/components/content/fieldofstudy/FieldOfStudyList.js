@@ -12,7 +12,7 @@ const FieldOfStudyList = (props) => {
     const [rows, setRows] = useState([]);
 
     const pullRecordsFromDatabaseServer = () => {
-        instance.get("/api/fieldsofstudy")
+        instance.get("/fieldsofstudy")
             .then((data) => {
                 // data ma pole data
                 console.log("Otrzymaliśmy sukces odpowiedź!")

@@ -11,7 +11,7 @@ const UniversityLecturersList = () => {
     const [rows, setRows] = useState([]);
 
     const pullRecordsFromDatabaseServer = () => {
-        instance.get("/api/universitylecturers")
+        instance.get("/universitylecturers")
             .then((data) => {
                 // data ma pole data
                 console.log("Return success !")

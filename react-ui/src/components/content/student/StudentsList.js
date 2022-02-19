@@ -13,7 +13,7 @@ const StudentsList = () => {
     const [rows, setRows] = useState([]);
 
     const pullRecordsFromDatabaseServer = () => {
-        instance.get("/api/students")
+        instance.get("/students")
             .then((data) => {
                 // data ma pole data
                 console.log("Return success !")

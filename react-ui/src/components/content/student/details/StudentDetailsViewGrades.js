@@ -13,7 +13,7 @@ const StudentDetails = () => {
     const [student, setStudent] = useState({});
 
     const pullRecords = () => {
-        instance.get(`/api/grades/${studentId}`)
+        instance.get`/grades/${studentId}`)
             .then((data) => {
                 // data ma pole data
                 setStudent(data.data);

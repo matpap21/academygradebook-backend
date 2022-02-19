@@ -38,6 +38,15 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.cors ( ).and ( ).csrf ( ).disable ( )
                 .authorizeRequests ( )
+                .antMatchers(
+                        "/**",
+                        "/api/**",
+                        "/static",
+                        "/asset-manifest.json",
+                        "/favicon.ico",
+                        "/index.html",
+                        "/manifest.json",
+                        "/service-worker.js").permitAll()
                 .antMatchers ("/api/login", "/login").permitAll ( )
                 .antMatchers ("/api/user/register", "/user/register").permitAll ( ) // jeśli macie tą linie, to każdy może się zarejestrować
                 // jeśli nie macie tej linii, to zarejestrować może tylko zalogowana osoba

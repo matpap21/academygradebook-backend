@@ -11,7 +11,7 @@ const GradesAddStudentsTable = (props) => {
 
 
     const handleRemoveRecord = (row) => {
-        instance.delete("/api/grades" + row.id)
+        instance.delete("/grades" + row.id)
             .then((data) => {
                 console.log("Otrzymaliśmy sukces odpowiedź!");
                 props.refreshData();
@@ -22,7 +22,7 @@ const GradesAddStudentsTable = (props) => {
     }
 
     const pullGrades = () => {
-        instance.get(`/api/grades/bystudent/${props.studentId}`)
+        instance.get(`/grades/bystudent/${props.studentId}`)
             .then((data) => {
                 // data ma pole data
                 console.log("Otrzymaliśmy sukces odpowiedź!")

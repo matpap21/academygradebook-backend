@@ -29,7 +29,7 @@ const FieldOfStudyForm = () => {
         // wysyłanie obiektu na serwer
         console.log("Wysyłamy:" + JSON.stringify(editedFieldOfStudy))
 
-        instance.post('/api/fieldsofstudy', editedFieldOfStudy)
+        instance.post('/fieldsofstudy', editedFieldOfStudy)
             .then((data) => {
                 console.log("Odpowiedz sukces: " + JSON.stringify(data));
             })
