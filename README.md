@@ -1,70 +1,80 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### `Project description`
 
-## Available Scripts
+Electronic gradebook \
 
-In the project directory, you can run:
+The aim is to design and implement an application as an electronic gradebook for students, which provides the possibility of adding and removing students, student groups and subjects and a preview of the student grades issued, after logging in, the student should be able to view his grades issued by the lecturer
+Frontend of this application is written in ReactJs and it can be found in directory React-UI
+### `Technologies`
 
-### `npm start`
+-JavaScript,
+-Spring Boot,\
+-Spring Security,\
+-Spring Data JPA,\
+-Hibernate,\
+-MySQL,\
+-ReactJs,\
+-Redux,\
+-Material-UI 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### `Implementation`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The project is part of the "Junior Java Developer" training course conducted by the Software Development Academy. \
+The project was invented and created for the purpose of completing the course.
 
-### `npm test`
+### `Features`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+• Adding fields of studies,\
+• Adding subjects,\
+• Adding student groups,\
+• Adding / removing students,\
+• Adding students to groups -> option for the Dean and Lecturers,\
+• Adding grades -> option for Dean and Lecturers,\
+• View of student grades given by Dean and Lecturers, 
 
-### `npm run build`
+### `Use Case`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+• The dean first adds the field of study
+• Dean or lecturer adds a subject
+• Dean or lecturer creates a group of students
+• Dean or lecturer adds grades to the student
+• The Dean or lecturer can view the student's grades
+• The student can view his / her grades
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `Configuration`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The only requirement for this application is reachable database. Current version of the application allows configuring
+MySQL database. Configuration file is located in: `src\main\resources\application.properties`. Required database 
+parameters are:
+```
+spring.datasource.url=?
+spring.datasource.username=?
+spring.datasource.password=?
+```
 
-### `npm run eject`
+Which can also be provided in command line along with application run command:
+```bash
+$ mvn -Dspring.datasource.url=? -Dspring.datasource.username=? -Dspring.datasource.password=? spring-boot:run
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `Build and run`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Application is built in 2 steps: frontend and backend. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To build UI we can run maven command which runs plugin, triggering npm commands:
+```bash
+$ mvn install
+# or
+$ mvn package
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To start the application run:
+```bash
+$ mvn spring-boot:run
+```
 
-## Learn More
+### `Author`
+Mateusz Paprocki 
+E-mail: mateusz.jan.paprocki@gmail.com
+Github: https://github.com/matpap21
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
