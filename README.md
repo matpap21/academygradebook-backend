@@ -33,11 +33,11 @@ The project was invented and created for the purpose of completing the course.
 
 ### `Use Case`
 
-• The dean first adds the field of study
-• Dean or lecturer adds a subject
-• Dean or lecturer creates a group of students
-• Dean or lecturer adds grades to the student
-• The Dean or lecturer can view the student's grades
+• The dean first adds the field of study, \
+• Dean or lecturer adds a subject,\
+• Dean or lecturer creates a group of students,\
+• Dean or lecturer adds grades to the student,\
+• The Dean or lecturer can view the student's grades,\
 • The student can view his / her grades
 
 ### `Configuration`
