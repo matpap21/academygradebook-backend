@@ -1,4 +1,3 @@
-
 ### `Project description`
 
 Electronic gradebook \
@@ -77,4 +76,5 @@ $ mvn spring-boot:run
 Mateusz Paprocki 
 E-mail: mateusz.jan.paprocki@gmail.com
 Github: https://github.com/matpap21
+
 
